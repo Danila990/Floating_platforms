@@ -7,18 +7,6 @@ namespace MyCode
 {
     public class Player : MonoBehaviour
     {
-        [field: SerializeField] public PlayerHealth PlayerHealth { get; private set; }
-        [field: SerializeField] public PlayerMovement PlayerMovement { get; private set; }
-
-        [Inject]
-        public void Construct(IInputService inputService)
-        {
-            PlayerMovement = new PlayerMovement(inputService);
-        }
-
-        private void Update()
-        {
-            PlayerMovement?.Update();
-        }
+        [SerializeField] private float _health;
     }
 }

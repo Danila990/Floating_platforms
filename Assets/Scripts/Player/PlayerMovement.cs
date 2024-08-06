@@ -2,25 +2,49 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using VContainer;
 using VContainer.Unity;
 
 namespace MyCode
 {
-    [Serializable]
-    public class PlayerMovement
+    [RequireComponent(typeof(Rigidbody))]
+    public class PlayerMovement : MonoBehaviour
     {
         [SerializeField] private float _speed;
 
-        private readonly IInputService _inputService;
+        private IInputService _inputService;
+        private Rigidbody _rb;
+        private float _inputX;
+        private float _inputZ;
 
-        public PlayerMovement(IInputService inputService)
+        [Inject]
+        public void Construct(IInputService inputService)
         {
             _inputService = inputService;
+            _inputService.OnMoveInput += Input;
         }
 
-        public void Update()
+        private void Start()
         {
+            _rb = GetComponent<Rigidbody>();
+        }
 
+        private void FixedUpdate()
+        {
+            Vector3 direction = new Vector3(_inputX, 0, _inputZ) * _speed;
+            direction.y = _rb.velocity.y;
+            _rb.velocity = direction;
+        }
+
+        private void OnDestroy()
+        {
+            _inputService.OnMoveInput -= Input;
+        }
+
+        private void Input(float x, float z)
+        {
+            _inputX = x;
+            _inputZ = z;
         }
     }
 }
