@@ -1,3 +1,4 @@
+using MyCode.Core;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -12,17 +13,17 @@ namespace MyCode
     {
         [SerializeField] private float _speed;
 
-        private IInputService _inputService;
+        //private IInputService _inputService;
         private Rigidbody _rb;
         private float _inputX;
         private float _inputZ;
 
-        [Inject]
+        /*[Inject]
         public void Construct(IInputService inputService)
         {
             _inputService = inputService;
             _inputService.OnMoveInput += Input;
-        }
+        }*/
 
         private void Start()
         {
@@ -38,7 +39,7 @@ namespace MyCode
 
         private void OnDestroy()
         {
-            _inputService.OnMoveInput -= Input;
+            //_inputService.OnMoveInput -= Input;
         }
 
         private void Input(float x, float z)

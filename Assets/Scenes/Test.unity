@@ -629,9 +629,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1386470675}
+  - component: {fileID: 1386470677}
   - component: {fileID: 1386470676}
+  - component: {fileID: 1386470678}
   m_Layer: 0
-  m_Name: ---Bootstrap---
+  m_Name: ---SCOPE---
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -661,27 +663,44 @@ MonoBehaviour:
   m_GameObject: {fileID: 1386470673}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2bfb492969e513743a4ace6d526590c9, type: 3}
+  m_Script: {fileID: 11500000, guid: 973a929c3845466449bb136a1aec667d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _isPc: 0
+  _mobileInputService: {fileID: -270999471105479758, guid: 814294d33caa8f04090cae9796e6dc74,
+    type: 3}
+--- !u!114 &1386470677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1386470673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87b462038e0ebe3498d2c3a480c7ec59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   parentReference:
     TypeName: 
-  autoRun: 0
+  autoRun: 1
   autoInjectGameObjects: []
-  _playerComponent:
-    _playerReference:
-      m_AssetGUID: 4d4c87010b7cf794a8614c646fb2cc3c
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
-    _playerStartPoint: {fileID: 1588608809}
-  _inputComponent:
-    _isPc: 0
-    _mobileInputReference:
-      m_AssetGUID: 814294d33caa8f04090cae9796e6dc74
-      m_SubObjectName: 
-      m_SubObjectType: 
-      m_EditorAssetChanged: 0
+  _scriptableObjectInstallers: []
+  _monoInstallers:
+  - {fileID: 1386470676}
+  - {fileID: 1386470678}
+--- !u!114 &1386470678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1386470673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a92e1602417f95d499ee60fafaa565aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1588608808
 GameObject:
   m_ObjectHideFlags: 0
@@ -691,8 +710,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1588608809}
+  - component: {fileID: 1588608810}
   m_Layer: 0
-  m_Name: StartPoint
+  m_Name: PlayerSpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -713,6 +733,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1588608810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1588608808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 853cd40beeb3899469ecaebb5bf8df6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spawmPoint: {fileID: 1588608809}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
