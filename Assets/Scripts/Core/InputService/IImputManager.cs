@@ -3,7 +3,8 @@ namespace MyCode.Core.InputService
 {
     public interface IImputManager
     {
-        public void SetInputService<T>(T setService) where T : BaseInputService;
-        public T GetInputService<T>() where T : BaseInputService;
+        public void SetService(InputType inputType);
+        public IInputService GetCurrentService();
+        public void ChangeUpdateState(bool isActive);
     }
 }

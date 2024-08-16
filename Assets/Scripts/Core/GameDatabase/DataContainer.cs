@@ -4,7 +4,8 @@ using UnityEngine;
 
 namespace MyCode.Core.GameDatabase
 {
-    public abstract class BaseContainer<T>
+    [Serializable]
+    public class DataContainer<T>
     {
         [Serializable]
         private struct FactoryData
@@ -16,21 +17,15 @@ namespace MyCode.Core.GameDatabase
         [SerializeField, ListDrawerSettings(ListElementLabelName = "Key", ElementColor = "GetElementColor"), Searchable, TableList]
         private FactoryData[] _objects;
 
-        public TObject Get<TObject>(string key) where TObject : T 
+        public T Get(string key)
         {
             foreach (var data in _objects)
             {
                 if (data.Key.Equals(key))
-                    return (TObject)data.Object;
+                    return data.Object;
             }
 
             throw new NullReferenceException($"Find {nameof(T)} is null");
         }
     }
-
-    [Serializable]
-    public class GameobjectContainer : BaseContainer<MonoBehaviour> { }
-
-    [Serializable]
-    public class ScriptableObjectContainer : BaseContainer<ScriptableObject> { }
 }

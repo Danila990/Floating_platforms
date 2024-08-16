@@ -1,18 +1,33 @@
+using MyCode.Core.Factory;
 using System;
 using UnityEngine;
+using VContainer;
 
 namespace MyCode.Core.InputService
 {
-    public class MobileInputService : BaseInputService
+    public class MobileInputService : IInputService
     {
+        public event Action<float, float> OnMoveInput;
+
+        [Inject] private IFactory _factory;
+
         [SerializeField] private Joystick _joystick;
 
-        public override event Action<float, float> OnMoveInput;
-
-        public override void Tick()
+        public void Activate()
         {
-            base.Tick();
+            if(_joystick is null)
+                _joystick = _factory.Create("Joystick").GetComponentInChildren<Joystick>();
 
+            _joystick.gameObject.SetActive(true);
+        }
+
+        public void Deactivate()
+        {
+            _joystick?.gameObject.SetActive(true);
+        }
+
+        public void Tick()
+        {
             OnMoveInput?.Invoke(_joystick.Horizontal, _joystick.Vertical);
         }
     }

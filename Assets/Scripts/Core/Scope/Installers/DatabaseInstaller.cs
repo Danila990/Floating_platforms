@@ -1,7 +1,7 @@
 using UnityEngine;
 using VContainer;
-using MyCode.Core.Factory;
 using MyCode.Core.GameDatabase;
+using VContainer.Unity;
 
 namespace MyCode.Core.Scope.Installers
 {
@@ -11,7 +11,7 @@ namespace MyCode.Core.Scope.Installers
 
         public override void Install(IContainerBuilder builder)
         {
-            builder.RegisterInstance<IDatabase>(_database).AsImplementedInterfaces();
+            builder.RegisterComponent<IDatabase>(_database);
         }
     }
 }

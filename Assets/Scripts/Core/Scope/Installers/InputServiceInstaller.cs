@@ -1,29 +1,26 @@
 using UnityEngine;
 using VContainer;
 using MyCode.Core.InputService;
+using VContainer.Unity;
 
 namespace MyCode.Core.Scope.Installers
 {
     public class InputServiceInstaller : MonoInstaller
     {
-        [SerializeField] private bool _isPc;
-        [SerializeField] private MobileInputService _mobileInputService;
+#if UNITY_EDITOR
+        [SerializeField] private InputType _inputType = InputType.PcDafault;
+#endif
 
         public override void Install(IContainerBuilder builder)
         {
-            /*BaseInputService inputService;
-            if (_isPc)
-                inputService = new PcInputService();
-            else
-            {
-                if (_mobileInputService == null)
-                    throw new NullReferenceException("Mobile Input Service is null");
+#if UNITY_EDITOR
+            BaseInputManager baseInput = new BaseInputManager();
+            baseInput.InputType = _inputType;
+            builder.RegisterComponent<IImputManager>(baseInput).As<ITickable, IInitializable>();
+            return;
+#endif
 
-                _mobileInputService = Instantiate(_mobileInputService);
-                inputService = _mobileInputService;
-            }
-
-            builder.RegisterInstance<IInputService, ITickable>(inputService);*/
+            builder.Register<IImputManager, BaseInputManager>(Lifetime.Singleton).AsImplementedInterfaces();
         }
     }
 }

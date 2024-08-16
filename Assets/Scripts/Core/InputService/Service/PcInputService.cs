@@ -3,14 +3,15 @@ using UnityEngine;
 
 namespace MyCode.Core.InputService
 {
-    public class PcInputService : BaseInputService
+    public class PcInputService : IInputService
     {
-        public override event Action<float, float> OnMoveInput;
+        public event Action<float, float> OnMoveInput;
 
-        public override void Tick()
+        public void Activate() { }
+        public void Deactivate() { }
+
+        public void Tick()
         {
-            base.Tick();
-
             float inputX = Input.GetAxis("Horizontal");
             float inputZ = Input.GetAxis("Vertical");
             OnMoveInput?.Invoke(inputX, inputZ);
