@@ -9,6 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 464d261ade32f2140b182cd4277bfec8, type: 3}
-  m_Name: MainFactory
+  m_Script: {fileID: 11500000, guid: 3722e2f04f01340489587e0137889720, type: 3}
+  m_Name: BaseDatabase
   m_EditorClassIdentifier: 
+  _gameobjects:
+    _objects: []
+  _scriptableObject:
+    _objects: []

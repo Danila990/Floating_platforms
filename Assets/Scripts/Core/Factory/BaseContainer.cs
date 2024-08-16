@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace MyCode.Core.Factory
 {
-    public abstract class BaseContainer<T> : ScriptableObject
+    public abstract class BaseContainer<T>
     {
         [Serializable]
         private struct FactoryData
@@ -28,9 +28,9 @@ namespace MyCode.Core.Factory
         }
     }
 
-    [CreateAssetMenu(menuName = "BaseContainer", fileName = nameof(BaseFactory))]
-    public class GameobjectContainer : BaseContainer<GameObject> { }
+    [Serializable]
+    public class GameobjectContainer : BaseContainer<MonoBehaviour> { }
 
-    [CreateAssetMenu(menuName = "BaseContainer", fileName = nameof(ScriptableObjectContainer))]
+    [Serializable]
     public class ScriptableObjectContainer : BaseContainer<ScriptableObject> { }
 }
