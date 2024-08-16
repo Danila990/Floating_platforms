@@ -1,7 +1,7 @@
 using System;
 using VContainer.Unity;
 
-namespace MyCode.Core.InputService
+namespace MyCode.Core
 {
     public interface IInputService : ITickable
     {

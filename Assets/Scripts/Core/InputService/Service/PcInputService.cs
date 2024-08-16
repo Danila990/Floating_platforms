@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace MyCode.Core.InputService
+namespace MyCode.Core
 {
     public class PcInputService : IInputService
     {

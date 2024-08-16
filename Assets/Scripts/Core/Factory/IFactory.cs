@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace MyCode.Core.Factory
+namespace MyCode.Core
 {
     public interface IFactory
     {

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace MyCode.Core.GameDatabase
+namespace MyCode.Core
 {
     public interface IDatabase
     {

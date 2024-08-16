@@ -1,9 +1,8 @@
-using MyCode.Core.Factory;
 using System;
 using UnityEngine;
 using VContainer;
 
-namespace MyCode.Core.InputService
+namespace MyCode.Core
 {
     public class MobileInputService : IInputService
     {

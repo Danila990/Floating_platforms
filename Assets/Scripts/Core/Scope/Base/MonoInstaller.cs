@@ -3,7 +3,7 @@ using UnityEngine;
 using VContainer;
 using VContainer.Unity;
 
-namespace MyCode.Core.Scope
+namespace MyCode.Core
 {
 	public class MonoInstaller : MonoBehaviour, IInstaller
 	{

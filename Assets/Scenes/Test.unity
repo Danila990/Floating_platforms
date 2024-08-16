@@ -630,7 +630,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1386470675}
   - component: {fileID: 1386470677}
-  - component: {fileID: 1386470679}
   - component: {fileID: 1386470680}
   - component: {fileID: 1386470676}
   - component: {fileID: 1386470678}
@@ -668,7 +667,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 973a929c3845466449bb136a1aec667d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _inputType: 1
+  _testInput: 1
 --- !u!114 &1386470677
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -685,11 +684,12 @@ MonoBehaviour:
     TypeName: 
   autoRun: 1
   autoInjectGameObjects: []
-  _scriptableObjectInstallers: []
+  _scriptableObjectInstallers:
+  - {fileID: 11400000, guid: b56c8d4b7ba4cce4389812c09a6cb36e, type: 2}
   _monoInstallers:
-  - {fileID: 1386470679}
   - {fileID: 1386470680}
   - {fileID: 1386470676}
+  - {fileID: 1386470678}
 --- !u!114 &1386470678
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -702,19 +702,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a92e1602417f95d499ee60fafaa565aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1386470679
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1386470673}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84d523f9edbb1fa48a5620792405317f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _database: {fileID: 11400000, guid: 609649014180b3f4dabbbf4a329018bf, type: 2}
 --- !u!114 &1386470680
 MonoBehaviour:
   m_ObjectHideFlags: 0

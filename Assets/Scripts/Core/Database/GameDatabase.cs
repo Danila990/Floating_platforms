@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 
-namespace MyCode.Core.GameDatabase
+namespace MyCode.Core
 {
-    [CreateAssetMenu(menuName = "BaseDatabase", fileName = nameof(BaseDatabase))]
-    public class BaseDatabase : ScriptableObject, IDatabase
+    [CreateAssetMenu(menuName = "GameDatabase", fileName = nameof(GameDatabase))]
+    public class GameDatabase : ScriptableObject, IDatabase
     {
         [SerializeField] private DataContainer<GameObject> _gameobjects;
         [SerializeField] private DataContainer<ScriptableObject> _scriptableObject;

@@ -3,26 +3,25 @@ using System.Collections.Generic;
 using VContainer;
 using VContainer.Unity;
 
-namespace MyCode.Core.InputService
+namespace MyCode.Core
 {
-    public class BaseInputManager : ITickable, IImputManager, IInitializable
+    public class InputController : ITickable, IImputController, IInitializable
     {
         [Inject] private IObjectResolver _objectResolver;
 
         private readonly Dictionary<InputType, IInputService> _services = new Dictionary<InputType, IInputService>();
         private IInputService _currentService;
         private bool _isUpdate = true;
+        private InputType _inputType = InputType.PcDafault;
 
-#if UNITY_EDITOR
-        public InputType InputType = InputType.PcDafault;
-#endif
+        public InputController(InputType inputType)
+        {
+            _inputType = inputType;
+        }
 
         public void Initialize()
         {
-#if UNITY_EDITOR
-            SetService(InputType);
-            return;
-#endif
+            SetInput(_inputType);
         }
 
         public void Tick()
@@ -32,7 +31,7 @@ namespace MyCode.Core.InputService
                     _currentService.Tick();
         }
 
-        public void SetService(InputType inputType)
+        public void SetInput(InputType inputType)
         {
             if(TryGetService(inputType, out IInputService inputService))
             {
@@ -55,11 +54,11 @@ namespace MyCode.Core.InputService
                     break;
 
                 default:
-                    throw new Exception($"InputType is not bind setting");
+                    throw new Exception($"_testInput is not bind setting");
             }
         }
 
-        public IInputService GetCurrentService()
+        public IInputService GetInput()
         {
             if (_currentService is not null)
                 return _currentService;

@@ -1,11 +1,10 @@
-﻿using MyCode.Core.GameDatabase;
-using UnityEngine;
+﻿using UnityEngine;
 using VContainer;
 using Object = UnityEngine.Object;
 
-namespace MyCode.Core.Factory
+namespace MyCode.Core
 {
-    public class BaseFactory : IFactory
+    public class Factory : IFactory
     {
         private IDatabase _database;
         private IObjectResolver _objectResolver;
