@@ -1,8 +1,7 @@
-﻿using MyCode.Core.Scope;
-using VContainer;
+﻿using VContainer;
 using VContainer.Unity;
 
-namespace MyCode.Core.Installers
+namespace MyCode.Core.Scope.Installers
 {
     public class PlayerInstaller : MonoInstaller
     {

@@ -1,11 +1,8 @@
-using System;
 using UnityEngine;
 using VContainer;
-using VContainer.Unity;
-using MyCode.Core.Scope;
 using MyCode.Core.InputService;
 
-namespace MyCode.Core.Installers
+namespace MyCode.Core.Scope.Installers
 {
     public class InputServiceInstaller : MonoInstaller
     {

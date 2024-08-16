@@ -2,7 +2,7 @@ using Sirenix.OdinInspector;
 using System;
 using UnityEngine;
 
-namespace MyCode.Core.Factory
+namespace MyCode.Core.GameDatabase
 {
     public abstract class BaseContainer<T>
     {

@@ -1,9 +1,9 @@
 using UnityEngine;
 using VContainer;
-using MyCode.Core.Scope;
 using MyCode.Core.Factory;
+using MyCode.Core.GameDatabase;
 
-namespace MyCode.Core.Installers
+namespace MyCode.Core.Scope.Installers
 {
     public class DatabaseInstaller : MonoInstaller
     {
@@ -11,8 +11,7 @@ namespace MyCode.Core.Installers
 
         public override void Install(IContainerBuilder builder)
         {
-            builder.RegisterInstance(_database).AsImplementedInterfaces();
-            builder.Register<BaseFactory>(Lifetime.Singleton).AsImplementedInterfaces();
+            builder.RegisterInstance<IDatabase>(_database).AsImplementedInterfaces();
         }
     }
 }
