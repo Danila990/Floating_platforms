@@ -17,5 +17,8 @@ MonoBehaviour:
     - Key: Joystick
       Object: {fileID: 8555294906691814345, guid: 814294d33caa8f04090cae9796e6dc74,
         type: 3}
+    - Key: Player
+      Object: {fileID: 796036921812617910, guid: 4d4c87010b7cf794a8614c646fb2cc3c,
+        type: 3}
   _scriptableObject:
     _objects: []

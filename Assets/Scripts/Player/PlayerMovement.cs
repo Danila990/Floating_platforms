@@ -1,29 +1,17 @@
 using MyCode.Core;
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using VContainer;
-using VContainer.Unity;
 
-namespace MyCode
+namespace MyCode._Player
 {
     [RequireComponent(typeof(Rigidbody))]
     public class PlayerMovement : MonoBehaviour
     {
         [SerializeField] private float _speed;
 
-        //private IInputService _inputService;
+        private IInputService _inputService;
         private Rigidbody _rb;
         private float _inputX;
         private float _inputZ;
-
-        /*[Inject]
-        public void Construct(IInputService inputService)
-        {
-            _inputService = inputService;
-            _inputService.OnMoveInput += Input;
-        }*/
 
         private void Start()
         {
@@ -37,12 +25,14 @@ namespace MyCode
             _rb.velocity = direction;
         }
 
-        private void OnDestroy()
+        private void OnDestroy() => _inputService.OnMoveInput -= OnMoveInput;
+        public void SetInputServce(IInputService inputServce)
         {
-            //_inputService.OnMoveInput -= Input;
+            _inputService = inputServce;
+            _inputService.OnMoveInput += OnMoveInput;
         }
 
-        private void Input(float x, float z)
+        private void OnMoveInput(float x, float z)
         {
             _inputX = x;
             _inputZ = z;

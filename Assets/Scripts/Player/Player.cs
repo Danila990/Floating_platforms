@@ -1,9 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using VContainer;
 
-namespace MyCode
+namespace MyCode._Player
 {
     public class Player : MonoBehaviour
     {

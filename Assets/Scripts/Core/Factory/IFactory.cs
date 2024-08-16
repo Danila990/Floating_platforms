@@ -4,7 +4,7 @@ namespace MyCode.Core
 {
     public interface IFactory
     {
-        public T Create<T>(string key, Vector3 pos, bool isActive = true) where T : MonoBehaviour;
+        public T CreateAndSetPos<T>(string key, Vector3 pos, bool isActive = true) where T : MonoBehaviour;
         public T Create<T>(string key, bool isActive = true) where T : MonoBehaviour;
         public GameObject Create(string key, bool isActive = true);
         public GameObject CreateAndSetPos(string key, Vector3 pos, bool isActive = true);

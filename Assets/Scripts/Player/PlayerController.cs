@@ -1,18 +1,29 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using UnityEngine;
+﻿using MyCode.Core;
 using VContainer.Unity;
 
-namespace MyCode
+namespace MyCode._Player
 {
     public class PlayerController : IInitializable
     {
+        public readonly IFactory Factory;
+        public readonly IImputController ImputController;
+        public readonly PlayerSpawnPoint SpawnPoint;
+
+        public Player Player { get; private set; }
+        public PlayerMovement PlayerMovement { get; private set; }
+
+        public PlayerController(IFactory factory, IImputController imputController, PlayerSpawnPoint playerSpawnPoint)
+        {
+            Factory = factory;
+            ImputController = imputController;
+            SpawnPoint = playerSpawnPoint;
+        }
+
         public void Initialize()
         {
-            throw new NotImplementedException();
+            Player = Factory.CreateAndSetPos<Player>("Player", SpawnPoint.SpawnPoint);
+            PlayerMovement = Player.GetComponent<PlayerMovement>();
+            PlayerMovement.SetInputServce(ImputController.GetInput());
         }
     }
 }

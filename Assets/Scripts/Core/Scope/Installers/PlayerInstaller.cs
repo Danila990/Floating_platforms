@@ -1,4 +1,5 @@
-﻿using VContainer;
+﻿using MyCode._Player;
+using VContainer;
 using VContainer.Unity;
 
 namespace MyCode.Core
@@ -7,8 +8,8 @@ namespace MyCode.Core
     {
         public override void Install(IContainerBuilder builder)
         {
-            /*builder.RegisterComponentInHierarchy<PlayerSpawnPoint>();
-            builder.Register<Player>(Lifetime.Singleton).AsImplementedInterfaces();*/
+            builder.RegisterComponentInHierarchy<PlayerSpawnPoint>();
+            builder.Register<PlayerController>(Lifetime.Singleton).AsImplementedInterfaces();
         }
     }
 }

@@ -6,17 +6,16 @@ namespace MyCode.Core
 {
     public class Factory : IFactory
     {
-        private IDatabase _database;
-        private IObjectResolver _objectResolver;
+        private readonly IDatabase _database;
+        private readonly IObjectResolver _objectResolver;
 
-        [Inject]
-        private void Construct(IObjectResolver objectResolver, IDatabase database)
+        public Factory(IObjectResolver objectResolver, IDatabase database)
         {
             _database = database;
             _objectResolver = objectResolver;
         }
 
-        public T Create<T>(string key, Vector3 pos, bool isActive = true) where T : MonoBehaviour
+        public T CreateAndSetPos<T>(string key, Vector3 pos, bool isActive = true) where T : MonoBehaviour
         {
             return CreateAndSetPos(key, pos, isActive).GetComponent<T>();
         }
