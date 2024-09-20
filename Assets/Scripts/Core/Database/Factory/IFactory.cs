@@ -9,5 +9,6 @@ namespace MyCode.Core
         public GameObject Create(string key, bool isActive = true);
         public GameObject CreateAndSetPos(string key, Vector3 pos, bool isActive = true);
         public T CreateScriptableObject<T>(string gameObjectName) where T : ScriptableObject;
+        public void InjectObject(object obj);
     }
 }

@@ -46,5 +46,7 @@ namespace MyCode.Core
             _objectResolver.Inject(newObject);
             return newObject;
         }
+
+        public void InjectObject(object obj) => _objectResolver.Inject(obj);
     }
 }
