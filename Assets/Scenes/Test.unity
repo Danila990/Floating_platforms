@@ -630,8 +630,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1386470675}
   - component: {fileID: 1386470677}
-  - component: {fileID: 1386470679}
-  - component: {fileID: 1386470678}
+  - component: {fileID: 1386470680}
   m_Layer: 0
   m_Name: ---SCOPE---
   m_TagString: Untagged
@@ -670,11 +669,11 @@ MonoBehaviour:
     TypeName: 
   autoRun: 1
   autoInjectGameObjects: []
-  _scriptableObjectInstallers: []
+  _scriptableObjectInstallers:
+  - {fileID: 11400000, guid: 4bf18328075bca342ae1c0c7147e0353, type: 2}
   _monoInstallers:
-  - {fileID: 1386470679}
-  - {fileID: 1386470678}
---- !u!114 &1386470678
+  - {fileID: 1386470680}
+--- !u!114 &1386470680
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -686,20 +685,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c44e3517c475294eb8a3368f2b471f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _testInput: 1
---- !u!114 &1386470679
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1386470673}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b9a174240ff4904b8d5f9e7b27ebeb2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _database: {fileID: 11400000, guid: 609649014180b3f4dabbbf4a329018bf, type: 2}
+  _testInput: 0
 --- !u!1 &1588608808
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,10 +1,11 @@
-﻿using UnityEngine;
+using UnityEngine;
 using VContainer;
 using VContainer.Unity;
 
 namespace MyCode.Core
 {
-    public class GameCoreInstaller : MonoInstaller
+    [CreateAssetMenu(menuName = "DataInstaller", fileName = nameof(DataInstaller))]
+    public class DataInstaller : ScriptableObjectInstaller
     {
         [SerializeField] private GameDatabase _database;
 
